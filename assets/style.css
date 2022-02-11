@@ -158,6 +158,29 @@ strong{
 
 /* End Main Content */
 
+/* Project Gif/Images */
+
+
+#projectImages ul{
+    white-space: nowrap;
+    padding: 0px !important;
+}
+
+#projectImages ul,li{
+    list-style: none;
+    display: inline;
+}
+
+.image{
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+}
+
+.image img{
+    width: 100%;
+    height: auto;
+}
 
 /* PARTICLES */
 #particles-js{
