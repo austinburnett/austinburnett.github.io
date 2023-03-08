@@ -2,113 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta https-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <link rel="stylesheet" href="assets/style.css">
-  <title>Austin Burnett</title>
+  <title>Austin Burnett Portfolio</title>
 </head>
 
 <body>
-  
-   <nav id="site-nav" role="navigation">
+   <div id="site-nav-bar">
+   <nav id="nav-content" role="navigation">
     <ul>
       <li><a href="#site-heading">About</a></li>
       <li><a href="#site-main">Experience</a></li>
-      <li><a href="./assets/Austin_s_Resume.pdf">Resume</a></li>
+      <li><a href="./assets/AustinResume.pdf">Resume</a></li>
       <li><a href="#Projects">Projects</a></li>
     </ul>
    </nav>
+
+   </div>
   
-
-  <div id="particles-js"></div>
-
-  
-
-    <header id="site-heading">
-
-      <div class="heading-content">
+    <header id="site-header">
+      <div class="header-content">
         <h1>Austin Burnett</h1>
-
-        <img src="assets/images/self1.JPG">
-
-
-        <p>I'm currently a Computer Science major enrolled at the University of Kentucky; ever since my first programming class 
-          I have been ecstatic to learn more. I'm passionate about working on software that is impactful and solves real-world problems. In my free time I like working on personal projects, browsing the web for cool open source projects to contribute to, and watching videos about programming. When I'm not absorbed in programming,
-          you can find me cooking, binge watching tv series, or playing video games.
-        </p>
-
-        
-
-        <p>  Recently I was asked a question that I really enjoyed, "What song would you play when you walked into a room?"
-          Mine is Livin' Thing by Electric Light Orchestra. What would yours be?</p>
-
       </div>
-
     </header>
-    
-    <br> <br> <br> <br>
+   
+    <div class="about-me">
+      <!-- Bold keywords about my interests and technologies used-->
+      <p> 
+          <img src="./assets/images/self_image.JPG">
+          I'm a software engineer with a passion for <strong>backend development</strong>, I am always on the lookout for new challenges that can help me grow in my field. My current goal is to deepen my knowledge of distributed systems, as I am convinced that this is the future of software engineering.
+          <br>
+          <br>
+          Over the years, I have gained experience in contributing to and implementing complex systems, and I pride myself on being able to work well both independently and as part of a team. I have a keen eye for detail and a drive to constantly improve my skills and stay up to date with the latest industry trends.
+          <br> 
+          <br>
+          My expertise includes working with languages such as Javascript, C++, and Python, as well as experience with databases and cloud services. My approach to software engineering is rooted in the principles of agile development, which allows me to produce high-quality code that meets user needs. 
+      </p>
+    </div>
 
     <main id="site-main">
       <div class="main-content">
-        <h2> <a>Experience</a></h2>
 
-        <p>My most recent experience as a software developer was at Bitwerx, Inc.
-           Here, I followed my passion and was able to work on software that impacted Veterinary
-           Clinics across the United States. I used <strong>C++</strong> code and <strong>librsync</strong> to upgrade the way we did our
-           data migrations. The impact this upgrade had improved the speed of our migrations
-           and made them more secure. To test this upgrade, I used <strong>Microsoft Azure Blob Storage</strong> to make sure that
-           our data was being properly uploaded to the cloud. Additionally, I worked on reviewing/completing pull requests using <strong>Microsoft Azure Devops</strong>.      
-        </p>
-        <br>
-        <p>Prior to the start of my first internship, I wanted to take on the challenge of contributing to a 
-          larger codebase. Eventually, I found a cool open-source project to contribute to, couchers.org. During my work
-          on this web app I used <strong>Python</strong> and <strong>Flask</strong> to add a new feature to the backend that
-          sent a notification to users when someone accepted their friend request.
-        </p>
+        <h2 id="experience"> <a>Experience</a></h2>
+        <div class="work-experience">
+            <!-- from left to right -->
+            <!-- Picture of workplace  work done   date -->
+            <!-- Bold technologies used in work done -->
+            <!-- Maybe have seperate class for open source experience, ie. a good layout to see the link of the commit-->
+        </div>
 
-        <br>
-
-        <p>
-          This is where it all began, my first professional experience as a devloper. During my first semester at the University of Kentucky
-          I started working as a Research Assistant in the Computer Science department. Here, I wrote <strong>HTML</strong> & <strong>CSS</strong> for
-          the Classics in Translation website. 
-        </p>
-
-
-        <br> <br> <br> <br>
-
-        <h2 id="Projects"><a>Projects</a></h2>
+        <h2 id="projects"><a>Projects</a></h2>
         <div id="projectImages">
+          <!-- from left to right -->
+          <!-- I want a grid of projects ie. matrix of projects -->
+          <!-- We should have image for each project, link to it, -->
           <ul>
             <li>
               <div class="image">
-                <img src="./assets/images/bubbleSort copy.png">
-              </div>
-            </li>
-            <li>
-              <div class="image">
-                <img src="./assets/images/pongClone.png">
+                <img src="./assets/AustinResume.pdf">
               </div>
             </li>
           </ul>
         </div>
-
       </div>
     </main>
     
-
-
     <footer id="site-footer">
       <div class="footer-content">
-
-
-
-
       </div>
     </footer>
-
-  
-  <script src="script.js"></script>
 </body>
 </html>
