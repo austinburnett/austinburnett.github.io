@@ -4,98 +4,95 @@
     width: 100%;
     font-family: 'Courier New', Courier, monospace;
 }
-
 html,body
 {
    margin: 0;
 }
-
 body{
+    height: 100%;
     background-color: #efefef;
 }
-
-p{
-    font-size: 1.2vw;
-    text-align: justify;
-}
-
-/* Scale image to be same width as text? */
-img{
-    border-radius: 8px;
-    padding-right: 2rem;
-    float: left;
-    max-width: 15vw;
-    max-height: 20rem;
-    height: auto;
-}
-
 strong{
     color: #000000;
 }
 
-li{
+
+/* SITE HEADER > NAV BAR */
+header{
+    top: 0;
+    max-width: 100vw;
+    min-height: 3vw;
+    background-color: rgb(121 189 208);
+    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
+}
+header li{
     display: inline;
     padding-right: 50px;
     text-align:center;
 }
-
-li a{
+#nav-content a:hover{
+    color: #efefef;
+}
+#nav-content ul{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(121 189 208);
+}
+#nav-content{
+    text-align: center;
+}
+#nav-content li a{
     color:rgb(0, 0, 0);
     font-size: 2vw;
-    border-bottom: 4px solid rgb(75 137 154);
+    border-bottom: 1px solid rgb(75 137 154);
     text-decoration: none;
 }
+/* SITE HEADER > NAV BAR */
 
 
-/* SITE NAV BAR */
-#nav-content a:hover{
-    color: rgb(99 147 161);
+/* MAIN CONTENT */
+#main-content{
+    display: block;
 }
-
-#nav-content{
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 20rem;
-    z-index: 999;
-    background-color: rgb(121 189 208);
-    text-align: center;
-    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
-}
-/* SITE NAV BAR */
-
-
-/* SITE HEADER */
-.header-content h1{
-    font-weight: 5;
-    border-bottom: 2px solid rgb(75 137 154);
-    font-size: 3.0vw;
-    line-height: 2;
-    letter-spacing: .5vw;
-}
-/* END SITE HEADER */
-
-
-/* About Me */
-/* End About Me */
-
-
-/* Main Content */
-.main-content h2{
+#main-content h2{
     font-weight: 5;
     font-size: 2.5vw;
     line-height: 2;
     letter-spacing: .5vw;
+    margin: auto;
 }
-
-.main-content a{
+#main-content a{
     border-bottom: 2px solid rgb(75 137 154);
 }
-/* End Main Content */
-
-
-/* Project Gif/Images */
-.image{
-    display: inline-block;
+#main-content p{
+    font-size: 1.3vw;
+    text-align: justify;
+    height: auto;
 }
-/* End Projects */
+/* END MAIN CONTENT */
+
+
+/* ABOUT ME SECTION */
+#about-me-content p{
+   max-width: 95vw; 
+   margin: auto;
+   height: auto;
+}
+#about-me-content h1{
+    text-align: center;
+    font-weight: 5;
+    font-size: 2.0vw;
+    line-height: 2;
+    letter-spacing: .5vw;
+    margin: auto;
+}
+#about-me-content img{
+    float: left;
+    border-radius: 33px;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    max-width: 15vw;
+    max-height: 20vw;
+    height: auto;
+}
+/* END ABOUT ME SECTION */

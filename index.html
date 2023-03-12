@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,68 +9,62 @@
 </head>
 
 <body>
-   <div id="site-nav-bar">
-   <nav id="nav-content" role="navigation">
-    <ul>
-      <li><a href="#site-heading">About</a></li>
-      <li><a href="#site-main">Experience</a></li>
-      <li><a href="./assets/AustinResume.pdf">Resume</a></li>
-      <li><a href="#Projects">Projects</a></li>
-    </ul>
-   </nav>
+  <header>
+    <nav id="nav-content" role="navigation">
+      <ul>
+        <li><a href="#site-heading">About</a></li>
+        <li><a href="#site-main">Experience</a></li>
+        <li><a href="./assets/AustinResume.pdf">Resume</a></li>
+        <li><a href="#Projects">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   </div>
-  
-    <header id="site-header">
-      <div class="header-content">
-        <h1>Austin Burnett</h1>
-      </div>
-    </header>
-   
-    <div class="about-me">
-      <!-- Bold keywords about my interests and technologies used-->
-      <p> 
+  <main id="main-content">
+      <section id="about-me-content">
+        <h1><a>Austin Burnett</a></h1>
+        <!-- Bold keywords about my interests and technologies used-->
+        <p>
           <img src="./assets/images/self_image.JPG">
-          I'm a software engineer with a passion for <strong>backend development</strong>, I am always on the lookout for new challenges that can help me grow in my field. My current goal is to deepen my knowledge of distributed systems, as I am convinced that this is the future of software engineering.
+          I'm a software engineer with a passion for <strong>backend development</strong>, I am always on the lookout
+          for new challenges that can help me grow in my field. My current goal is to deepen my knowledge of <strong>distributed
+          systems</strong>, as I am convinced that this is the future of software engineering.
           <br>
           <br>
-          Over the years, I have gained experience in contributing to and implementing complex systems, and I pride myself on being able to work well both independently and as part of a team. I have a keen eye for detail and a drive to constantly improve my skills and stay up to date with the latest industry trends.
-          <br> 
+          Over the years, I have gained experience in contributing to and implementing complex systems, and I pride
+          myself on being able to work well both independently and as part of a team. I have a keen eye for detail and a
+          drive to constantly improve my skills and stay up to date with the latest industry trends.
           <br>
-          My expertise includes working with languages such as Javascript, C++, and Python, as well as experience with databases and cloud services. My approach to software engineering is rooted in the principles of agile development, which allows me to produce high-quality code that meets user needs. 
-      </p>
-    </div>
+          <br>
+          My expertise includes working with languages such as <strong>Javascript</strong>, <strong>C++</strong>, and <strong>Python</strong>, as well as experience with
+          <strong>databases</strong> and <strong>cloud services</strong>. My approach to software engineering is rooted in the principles of <strong>agile</strong>
+          development, which allows me to produce high-quality code that meets user needs.
+        </p>
+      </section>
 
-    <main id="site-main">
-      <div class="main-content">
-
+      <!-- from left to right -->
+      <!-- Picture of workplace  work done   date -->
+      <!-- Bold technologies used in work done -->
+      <!-- Maybe have seperate class for open source experience, ie. a good layout to see the link of the commit-->
+      <section id="work-experience">
         <h2 id="experience"> <a>Experience</a></h2>
-        <div class="work-experience">
-            <!-- from left to right -->
-            <!-- Picture of workplace  work done   date -->
-            <!-- Bold technologies used in work done -->
-            <!-- Maybe have seperate class for open source experience, ie. a good layout to see the link of the commit-->
-        </div>
+      </section>
 
-        <h2 id="projects"><a>Projects</a></h2>
-        <div id="projectImages">
-          <!-- from left to right -->
-          <!-- I want a grid of projects ie. matrix of projects -->
-          <!-- We should have image for each project, link to it, -->
+      <!-- from left to right -->
+      <!-- I want a grid of projects ie. matrix of projects -->
+      <!-- We should have image for each project, link to it, -->
+      <section id="projectImages">
+        <h2><a>Projects</a></h2>
+        <div class="projects">
           <ul>
-            <li>
-              <div class="image">
-                <img src="./assets/AustinResume.pdf">
-              </div>
-            </li>
           </ul>
         </div>
-      </div>
-    </main>
-    
-    <footer id="site-footer">
-      <div class="footer-content">
-      </div>
-    </footer>
+      </section>
+  </main>
+
+  <!-- Links to github, linkedIn, and any other socials -->
+  <!-- Add some icons here -->
+  <footer id="footer-content">
+  </footer>
 </body>
 </html>
