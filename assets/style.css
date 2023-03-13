@@ -59,7 +59,6 @@ header li{
     font-size: 2.5vw;
     line-height: 2;
     letter-spacing: .5vw;
-    margin: auto;
 }
 #main-content a{
     border-bottom: 2px solid rgb(75 137 154);
@@ -67,16 +66,13 @@ header li{
 #main-content p{
     font-size: 1.3vw;
     text-align: justify;
-    height: auto;
 }
 /* END MAIN CONTENT */
 
 
 /* ABOUT ME SECTION */
-#about-me-content p{
-   max-width: 95vw; 
-   margin: auto;
-   height: auto;
+#about-me-content{
+    margin: 1vw;
 }
 #about-me-content h1{
     text-align: center;
@@ -84,15 +80,59 @@ header li{
     font-size: 2.0vw;
     line-height: 2;
     letter-spacing: .5vw;
-    margin: auto;
 }
+#about-me-content p{
+   max-width: 95vw; 
+   margin: 0;
+}
+/* FIX THIS: when resizing the img in about me content is outside bounds causing 
+   work-content h2 to shift left and right */
+/* this is fixed by adding margin to h2 */
 #about-me-content img{
     float: left;
-    border-radius: 33px;
+    border-radius: 30px;
     padding-right: 1vw;
     padding-left: 1vw;
     max-width: 15vw;
     max-height: 20vw;
+    object-fit: contain;
     height: auto;
 }
 /* END ABOUT ME SECTION */
+
+
+/* WORK EXPERIENCE SECTION */
+#work-content{
+    margin: 1vw;
+}
+#work-content h1{
+    text-align: center;
+    font-weight: 5;
+    font-size: 2.0vw;
+    line-height: 2;
+    letter-spacing: .5vw;
+}
+.experience{
+
+}
+/* END WORK EXPERIENCE SECTION */
+
+
+/* PROJECT SECTION */
+#project-content{
+    margin: 1vw;
+}
+#project-content h1{
+    font-weight: 5;
+    font-size: 2.0vw;
+    line-height: 2;
+    letter-spacing: .5vw;
+    text-align: center;
+}
+/* END PROJECT SECTION */
+
+
+/* FOOTER SECTION */
+#footer-content{
+
+}
