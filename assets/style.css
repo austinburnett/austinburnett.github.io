@@ -6,10 +6,10 @@
 }
 html,body
 {
+   min-height: 100%;
    margin: 0;
 }
 body{
-    height: 100%;
     background-color: #efefef;
 }
 strong{
@@ -36,7 +36,6 @@ header li{
 #nav-content ul{
     padding: 0;
     margin: 0;
-    background-color: rgb(121 189 208);
 }
 #nav-content{
     text-align: center;
@@ -83,16 +82,14 @@ header li{
 }
 #about-me-content p{
    max-width: 95vw; 
-   margin: 0;
 }
-/* FIX THIS: when resizing the img in about me content is outside bounds causing 
-   work-content h2 to shift left and right */
-/* this is fixed by adding margin to h2 */
+/* FIX THIS:  
+   Image is overflowing p tag and causing experience header to move
+   when resizing */
 #about-me-content img{
     float: left;
     border-radius: 30px;
     padding-right: 1vw;
-    padding-left: 1vw;
     max-width: 15vw;
     max-height: 20vw;
     object-fit: contain;
@@ -113,7 +110,16 @@ header li{
     letter-spacing: .5vw;
 }
 .experience{
-
+    margin: inherit;
+}
+.experience h3{
+    font-weight: 5;
+    font-size: 1.5vw;
+}
+.experience li{
+    max-width: 95vw;
+    font-size: 1.3vw;
+    margin: 0;
 }
 /* END WORK EXPERIENCE SECTION */
 
@@ -133,6 +139,12 @@ header li{
 
 
 /* FOOTER SECTION */
+#footer-content h2{
+    text-align: center;
+    color: #efefef;
+}
 #footer-content{
-
+   margin-top: 1vw;
+   background-color: #000000;
+   position: absolute;
 }
