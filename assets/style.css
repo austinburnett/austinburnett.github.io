@@ -1,15 +1,17 @@
 /* Include some  @media for responsive layout */
 *{
     box-sizing: border-box;
-    width: 100%;
     font-family: 'Courier New', Courier, monospace;
 }
-html,body
+html
 {
-   min-height: 100%;
    margin: 0;
 }
-body{
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     background-color: #efefef;
 }
 strong{
@@ -19,8 +21,7 @@ strong{
 
 /* SITE HEADER > NAV BAR */
 header{
-    top: 0;
-    max-width: 100vw;
+    min-width: 100vw;
     min-height: 3vw;
     background-color: rgb(121 189 208);
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
@@ -50,9 +51,6 @@ header li{
 
 
 /* MAIN CONTENT */
-#main-content{
-    display: block;
-}
 #main-content h2{
     font-weight: 5;
     font-size: 2.5vw;
@@ -62,18 +60,12 @@ header li{
 #main-content a{
     border-bottom: 2px solid rgb(75 137 154);
 }
-#main-content p{
-    font-size: 1.3vw;
-    text-align: justify;
-}
 /* END MAIN CONTENT */
 
 
 /* ABOUT ME SECTION */
-#about-me-content{
-    margin: 1vw;
-}
 #about-me-content h1{
+    margin: 0;
     text-align: center;
     font-weight: 5;
     font-size: 2.0vw;
@@ -81,28 +73,26 @@ header li{
     letter-spacing: .5vw;
 }
 #about-me-content p{
-   max-width: 95vw; 
+   display: block;
+   font-size: 1.3vw;
+   /* fixes p tag problem where img overflows */
+   overflow: hidden;
 }
-/* FIX THIS:  
-   Image is overflowing p tag and causing experience header to move
-   when resizing */
 #about-me-content img{
     float: left;
     border-radius: 30px;
     padding-right: 1vw;
     max-width: 15vw;
-    max-height: 20vw;
-    object-fit: contain;
-    height: auto;
 }
 /* END ABOUT ME SECTION */
 
 
 /* WORK EXPERIENCE SECTION */
 #work-content{
-    margin: 1vw;
+    height:auto;
 }
 #work-content h1{
+    margin: 0;
     text-align: center;
     font-weight: 5;
     font-size: 2.0vw;
@@ -113,11 +103,11 @@ header li{
     margin: inherit;
 }
 .experience h3{
+    margin: 0;
     font-weight: 5;
     font-size: 1.5vw;
 }
 .experience li{
-    max-width: 95vw;
     font-size: 1.3vw;
     margin: 0;
 }
@@ -125,10 +115,8 @@ header li{
 
 
 /* PROJECT SECTION */
-#project-content{
-    margin: 1vw;
-}
 #project-content h1{
+    margin: 0;
     font-weight: 5;
     font-size: 2.0vw;
     line-height: 2;
@@ -146,5 +134,5 @@ header li{
 #footer-content{
    margin-top: 1vw;
    background-color: #000000;
-   position: absolute;
+   width: 100%;
 }
