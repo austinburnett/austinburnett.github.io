@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
   <title>Austin Burnett Portfolio</title>
+  <script src="https://kit.fontawesome.com/d48cecc20b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
     <nav id="nav-content" role="navigation">
       <ul>
-        <li><a href="#about-me-content">About</a></li>
-        <li><a href="#work-content">Experience</a></li>
-        <li><a href="#project-content">Projects</a></li>
+        <li><a href="#about-me">About</a></li>
+        <li><a href="#work">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="">Blog</a></li>
         <li><a href="./assets/AustinResume.pdf">Resume</a></li>
       </ul>
@@ -22,14 +23,15 @@
   </header>
 
   <main id="main-content">
-      <section class="container">
+      <section id="about-me" class="container">
         <h1><a>Austin Burnett</a></h1>
         <!-- Bold keywords about my interests and technologies used-->
+        <img src="./assets/images/self_image.JPG">
         <p>
-          <img src="./assets/images/self_image.JPG">
           I'm a software engineer with a passion for <strong>backend development</strong>, I am always on the lookout
           for new challenges that can help me grow in my field. My current goal is to deepen my knowledge of <strong>distributed
           systems</strong>, as I am convinced that this is the future of software engineering.
+            
           <br>
           <br>
           Over the years, I have gained experience in contributing to and implementing complex systems, and I pride
@@ -44,7 +46,7 @@
       </section>
 
       <!-- Bold technologies and keywords/buzzwords used -->
-      <section class="container">
+      <section id="work" class="container">
         <h1><a>Experience</a></h1>
         <div class="experience">
           <h3>Bitwerx</h3>
@@ -81,27 +83,25 @@
       </section>
 
       <!-- We should have image for each project, link to it as well -->
-      <section class="container">
+      <section id="projects" class="container">
         <h1><a>Projects</a></h1>
         <div class="projects">
           <ul>
-          <!-- 
           <li><a href=""><img src="/assets/images/in_progress.jpg"></a></li>
           <li><a href=""><img src="/assets/images/in_progress.jpg"></a></li>
           <li><a href=""><img src="/assets/images/in_progress.jpg"></a></li>
           </ul>
-          -->
         </div>
       </section>
-
-      <!-- Add some icons here -->
   </main>
 
   <footer>
       <h2>Socials:</h2>
       <ul>
         <li><a href="https://www.linkedin.com/in/austin-burnett-51249a183/">Linkedin</a></li>
+        <i class="fa-brands fa-linkedin"></i>
         <li><a href="https://github.com/austinburnett">Github</a></li>
+        <i class="fa-brands fa-square-github"></i>
       </ul>
   </footer>
 
