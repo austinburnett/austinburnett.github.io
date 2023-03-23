@@ -22,13 +22,13 @@ html, body{
         font-size: 1.3vh;
     }
     header li{
-        font-size: 1.8vw;
+        font-size: 1.8vw !important;
     }
     .container img{
-        max-width: 15vw;
+        max-width: 15vw !important;
     }
     .projects img{
-        max-width: 20vw;
+        max-width: 25vw !important;
     }
 }
 
@@ -95,7 +95,7 @@ header a:hover{
 
 /* PROJECTS */
 .projects img{
-    max-width: 15vw;
+    max-width: 20vw;
 }
 
 .projects a:hover{
