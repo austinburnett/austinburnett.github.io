@@ -1,4 +1,4 @@
-#Personal Website
-[Click Here](https://austinburnett.dev/)
+# Personal Website
+[Click Here to View](https://austinburnett.dev/)
 
 
