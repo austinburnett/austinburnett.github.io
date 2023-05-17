@@ -94,10 +94,19 @@ header a:hover{
 }
 
 /* PROJECTS */
+.projects{
+    display: flex;
+    flex-direction: column;
+}
+.projects div{
+    margin: 1vw;
+}
 .projects img{
     max-width: 20vw;
 }
-
+.projects h3{
+    margin: 0;
+}
 .projects a:hover{
     opacity: 50%;
 }
