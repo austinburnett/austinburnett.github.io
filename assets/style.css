@@ -10,13 +10,18 @@ html, body{
     width: 100%;
     /* FIXES BODY NOT BEING FULL PAGE */
     min-height: 100%;
+
     padding: 0;
     border: 0;
     margin: 0;
     background-color: #efefef;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
+
+    /* Let the text breathe */
+    line-height: 1.4;
 }
 
+/* Adapt to devices with smaller screens */
 @media (max-width: 1100px){
     body{
         font-size: 1.3vh;
@@ -54,7 +59,7 @@ header{
     padding: 1vw;
 }
 header li{
-    font-size: 1.5vw;
+    font-size: 30px;
     display: inline;
 }
 header a{
@@ -70,33 +75,71 @@ header a:hover{
     background-color: rgb(400, 400, 100, .88888888);
 }
 
-/* MAIN CONTENT- FLEX CONTAINER */
+/* MAIN FLEX CONTAINER */
 #main-content{
     display: flex;
-    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
     flex-direction: column;
     margin: 2vw;
+    align-items: center;
+}
+
+/* MAIN CONTENT */
+#mc{
+    /* Easier to read text in center of page */
+    max-width: 70rem;
+
+    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
+    background-color: rgb(229, 229, 234);
+}
+
+/* ABOUTME CONTENT */
+#about-me{
+    /* Color contrast? */
+    background-color: rgb(229, 229, 234);
+}
+#about-me h1{
+    border-bottom: 6px dotted rgb(121 189 208);
+    text-align: left;
+    font-size: 5vh;
+    margin: 1vw auto;
+    margin-top: 0px;
+}
+
+/* WORK/EXPERIENCE CONTENT */
+#work{
+    background-color: rgb(229, 229, 234);
+}
+#work h1{
+    text-align: center;
+    /* Temporary */
+    margin: 3rem;
+}
+#work h1 a{
+    border-bottom: 6px dotted rgb(121 189 208);
 }
 
 /* CONTAINER */
-.container{
-    background-color: rgb(229, 229, 234);
-}
-.container h1{
-    border-bottom: 6px dotted rgb(121 189 208);
-}
 .container img{
     float: left;
     height: auto;
     max-width: 12vw;
     border-radius: 15px;
     margin-right: 1vw;
+    margin-left: 1vw;
 }
 
 /* PROJECTS */
 .projects{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#projects h1{
+    text-align: center;
+}
+#projects h1 a{
+    border-bottom: 6px dotted rgb(121 189 208);
 }
 .projects div{
     margin: 1vw;
@@ -111,6 +154,11 @@ header a:hover{
     opacity: 50%;
 }
 
+/* Style a single Project */
+.project-item{
+    text-align: center;
+}
+
 /* FOOTER */
 footer{
     text-align: center;
@@ -118,16 +166,17 @@ footer{
     color: #efefef;
     background-color: black;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
+    padding: 4rem;
 }
 footer li{
     display: inline;
 }
 
 footer a{
-    color: rgb(121 189 208); 
+    color: rgb(255, 255, 255); 
     font-size: 2vw;
 }
 
 footer a:hover{
-    color: #efefef;
+    color: #50c7eb;
 }
