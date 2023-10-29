@@ -24,12 +24,21 @@ html, body{
 
 /* Adapt to devices with smaller screens */
 /* Change measurements from vw/vh to rem? kevin powell see what he uses */
-@media (max-width: 1100px){
+/* Fix mobile layout */
+@media (max-width: 816px){
     body{
         font-size: 1.3rem;
     }
+    header{
+        padding: .5rem;
+    }
+    header ul{
+        display: flex;
+        flex-direction: column;
+    }
     header li{
         font-size: 1.8rem !important;
+        padding: .2rem;
     }
     .container img{
         max-width: 15rem !important;
@@ -103,9 +112,17 @@ main{
 #about-me h1{
     border-bottom: 6px dotted rgb(121 189 208);
     text-align: left;
-    font-size: 5vh;
-    margin: 1rem auto;
+    font-size: 4rem;
+    margin: .5rem auto;
     margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#about-me p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 /* WORK/EXPERIENCE CONTENT */
@@ -119,6 +136,9 @@ main{
 }
 #work h1 a{
     border-bottom: 6px dotted rgb(121 189 208);
+}
+#work h3{
+    margin-left: 10px;
 }
 
 /* CONTAINER */
@@ -170,6 +190,9 @@ footer{
     background-color: black;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
     padding: 4rem;
+}
+footer ul{
+    padding: 0px;
 }
 footer li{
     display: inline;
