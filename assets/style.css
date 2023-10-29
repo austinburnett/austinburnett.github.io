@@ -27,36 +27,51 @@ html, body{
     body{
         font-size: 1.3rem;
     }
-    header ul{
-        display: flex;
-        flex-direction: column;
+    header{
+        padding: 0px !important;
     }
     header li{
         font-size: 1.8rem !important;
-        padding: .2rem;
+        padding: 0px;
+        margin-bottom: 1rem;
     }
-    .container img{
-        max-width: 15rem !important;
+    #about-me h1{
+        font-size: 1.5rem !important;
     }
 }
-
+/* Change img size */
 @media (max-width: 600px){
     html, body{
         font-size: 1.1rem;
         line-height: 1.1;
     }
-
-    .container img{
-        float: none !important;
-        margin: 0 !important;
+    header ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    header ul{
+        padding: 0;
+    } 
+    #about-me h1{
+        font-size: 2rem !important;
     }
     .about-me-image{
         text-align: center;
     }
+    .about-me-image img{
+        float: none !important;
+        margin: 0 !important;
+        height: auto;
+        max-width: 6rem;
+    }
+    footer li{
+        padding: 0px;
+    }
 }
 
 ul, li{
-    padding-left: 2rem;
     border: 0;
     margin: 0;
     list-style-type: none;
@@ -87,6 +102,7 @@ header a{
     border-radius: 10px;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
     padding: .2rem;
+    margin-left: 1rem;
     background-color: #efefef;
 }
 header a:hover{
@@ -106,25 +122,30 @@ main{
 #main-content{
     /* Easier to read text in center of page */
     max-width: 70rem;
-
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
     background-color: rgb(229, 229, 234);
 }
 
 /* ABOUTME CONTENT */
-#about-me{
-    /* Color contrast? */
-    background-color: rgb(229, 229, 234);
-}
 #about-me h1{
     border-bottom: 6px dotted rgb(121 189 208);
-    text-align: left;
     font-size: 4rem;
     margin: .5rem auto;
     margin-top: 0px;
     margin-left: 10px;
     margin-right: 10px;
 }
+
+/* CONTAINER */
+.about-me-image img{
+    float: left;
+    height: auto;
+    max-width: 12rem;
+    border-radius: 15px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
 #about-me p{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -133,9 +154,6 @@ main{
 }
 
 /* WORK/EXPERIENCE CONTENT */
-#work{
-    background-color: rgb(229, 229, 234);
-}
 #work h1{
     text-align: center;
     /* Temporary */
@@ -151,16 +169,6 @@ main{
 }
 #work li{
     margin-right: 10px;
-}
-
-/* CONTAINER */
-.container img{
-    float: left;
-    height: auto;
-    max-width: 12rem;
-    border-radius: 15px;
-    margin-right: 1rem;
-    margin-left: 1rem;
 }
 
 /* PROJECTS */
@@ -188,8 +196,6 @@ main{
 .projects a:hover{
     opacity: 50%;
 }
-
-/* Style a single Project */
 .project-item{
     text-align: center;
 }
@@ -205,9 +211,12 @@ footer{
 }
 footer ul{
     padding: 0px;
+    text-align: center;
 }
 footer li{
     display: inline;
+    padding: 0px;
+    margin-left: 20px;
 }
 footer a{
     color: rgb(255, 255, 255); 
