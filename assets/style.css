@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'serif';
 }
 html
 {
@@ -8,6 +8,7 @@ html
 }
 html, body{
     width: 100%;
+
     /* FIXES BODY NOT BEING FULL PAGE */
     min-height: 100%;
 
@@ -15,30 +16,31 @@ html, body{
     border: 0;
     margin: 0;
     background-color: #efefef;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
 
     /* Let the text breathe */
     line-height: 1.4;
 }
 
 /* Adapt to devices with smaller screens */
+/* Change measurements from vw/vh to rem? kevin powell see what he uses */
 @media (max-width: 1100px){
     body{
-        font-size: 1.3vh;
+        font-size: 1.3rem;
     }
     header li{
-        font-size: 1.8vw !important;
+        font-size: 1.8rem !important;
     }
     .container img{
-        max-width: 15vw !important;
+        max-width: 15rem !important;
     }
     .projects img{
-        max-width: 25vw !important;
+        max-width: 25rem !important;
     }
 }
 
 ul, li{
-    padding-left: 1.5vw;
+    padding-left: 2rem;
     border: 0;
     margin: 0;
     list-style-type: none;
@@ -56,7 +58,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    padding: 1vw;
+    padding: 1rem;
 }
 header li{
     font-size: 30px;
@@ -68,23 +70,24 @@ header a{
     border-right: 2px solid black;
     border-radius: 10px;
     box-shadow: 0 6px 20px 0 rgb(0 0 0 / 20%), 0 4px 10px 0 rgb(0 0 0 / 20%);
-    padding: .2vw;
+    padding: .2rem;
     background-color: #efefef;
 }
 header a:hover{
-    background-color: rgb(400, 400, 100, .88888888);
+    background-color: black;
+    color: white;
 }
 
 /* MAIN FLEX CONTAINER */
-#main-content{
+main{
     display: flex;
     flex-direction: column;
-    margin: 2vw;
+    margin: 2rem;
     align-items: center;
 }
 
 /* MAIN CONTENT */
-#mc{
+#main-content{
     /* Easier to read text in center of page */
     max-width: 70rem;
 
@@ -101,7 +104,7 @@ header a:hover{
     border-bottom: 6px dotted rgb(121 189 208);
     text-align: left;
     font-size: 5vh;
-    margin: 1vw auto;
+    margin: 1rem auto;
     margin-top: 0px;
 }
 
@@ -122,10 +125,10 @@ header a:hover{
 .container img{
     float: left;
     height: auto;
-    max-width: 12vw;
+    max-width: 12rem;
     border-radius: 15px;
-    margin-right: 1vw;
-    margin-left: 1vw;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 /* PROJECTS */
@@ -142,10 +145,10 @@ header a:hover{
     border-bottom: 6px dotted rgb(121 189 208);
 }
 .projects div{
-    margin: 1vw;
+    margin: 1rem;
 }
 .projects img{
-    max-width: 20vw;
+    max-width: 20rem;
 }
 .projects h3{
     margin: 0;
@@ -174,7 +177,7 @@ footer li{
 
 footer a{
     color: rgb(255, 255, 255); 
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 footer a:hover{
