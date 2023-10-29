@@ -46,6 +46,13 @@ html, body{
         line-height: 1.1;
     }
 
+    .container img{
+        float: none !important;
+        margin: 0 !important;
+    }
+    .about-me-image{
+        text-align: center;
+    }
 }
 
 ul, li{
@@ -142,6 +149,9 @@ main{
     /* Contrast by font? */
     font-family: Arial, Helvetica, sans-serif;
 }
+#work li{
+    margin-right: 10px;
+}
 
 /* CONTAINER */
 .container img{
@@ -199,12 +209,10 @@ footer ul{
 footer li{
     display: inline;
 }
-
 footer a{
     color: rgb(255, 255, 255); 
     font-size: 2rem;
 }
-
 footer a:hover{
     color: #50c7eb;
 }
