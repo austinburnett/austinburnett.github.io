@@ -23,14 +23,9 @@ html, body{
 }
 
 /* Adapt to devices with smaller screens */
-/* Change measurements from vw/vh to rem? kevin powell see what he uses */
-/* Fix mobile layout */
 @media (max-width: 816px){
     body{
         font-size: 1.3rem;
-    }
-    header{
-        padding: .5rem;
     }
     header ul{
         display: flex;
@@ -43,9 +38,14 @@ html, body{
     .container img{
         max-width: 15rem !important;
     }
-    .projects img{
-        max-width: 25rem !important;
+}
+
+@media (max-width: 600px){
+    html, body{
+        font-size: 1.1rem;
+        line-height: 1.1;
     }
+
 }
 
 ul, li{
@@ -139,6 +139,8 @@ main{
 }
 #work h3{
     margin-left: 10px;
+    /* Contrast by font? */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* CONTAINER */
