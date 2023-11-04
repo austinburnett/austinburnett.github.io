@@ -25,11 +25,12 @@ html, body{
 /* Adapt to devices with smaller screens */
 @media (max-width: 744px){
     header li{
-        font-size: 20px !important;
+        font-size: 25px !important;
     }
     body{
         font-size: 1.3rem;
     }
+    /* h1 wraps to another line without this */
     #about-me h1{
         font-size: 3.1rem !important;
     }
@@ -39,21 +40,20 @@ html, body{
         font-size: 1.1rem;
         line-height: 1.1;
     }
-    header ul{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    header a{
+        padding: 2px !important;
+        margin-left: 1px !important;
     }
     header ul{
-        padding: 0;
-    } 
+        padding-left: 0px;
+    }
     #about-me h1{
         font-size: 2rem !important;
         text-align: center;
     }
     .about-me-image{
         text-align: center;
+        margin-bottom: 10px;
     }
     .about-me-image img{
         float: none !important;
@@ -209,13 +209,12 @@ footer ul{
     text-align: center;
 }
 footer li{
-    display: inline;
     padding: 0px;
-    margin-left: 20px;
 }
 footer a{
     color: rgb(255, 255, 255); 
     font-size: 2rem;
+    padding: 5px;
 }
 footer a:hover{
     color: #50c7eb;
