@@ -108,6 +108,8 @@ main{
     display: flex;
     flex-direction: column;
     margin: 2rem;
+
+    /*  Looks good for about me but not other sections */
     align-items: center;
 }
 
@@ -121,6 +123,7 @@ main{
 #about-me h1{
     border-bottom: 6px double rgb(121 189 208);
     font-size: 4rem;
+    text-align: justify;
     margin: .5rem auto;
     margin-top: 0px;
     margin-left: 10px;
