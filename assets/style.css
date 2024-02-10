@@ -176,9 +176,8 @@ main{
 }
 #projects h1{
     text-align: center;
-}
-#projects h1 a{
-    border-bottom: 6px double rgb(121 189 208);
+    font-size: 3rem;
+    border: 6px double rgb(121 189 208);
 }
 .projects div{
     margin: 1rem;
