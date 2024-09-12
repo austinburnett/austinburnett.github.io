@@ -1,124 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Austin Burnett Portfolio</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Austin Burnett Portfolio</title>
+</head>
 
-  <body>
-    <header>
-      <nav id="nav-content" role="navigation">
-        <ul>
-          <li><a href="#about-me">About</a></li>
-          <!-- <li><a href="#work">Experience</a></li> -->
-          <li><a href="#projects">Projects</a></li>
-          <!-- <li><a href="">Blog</a></li> -->
-          <!-- <li><a href="./assets/AustinResume.pdf">Resume</a></li> -->
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <div id="main-content">
-        <section id="about-me" class="container">
-          <h1><a>Austin Lee Burnett</a></h1>
-          <div class="about-me-image">
-            <img alt="Austin Burnett Image" src="./assets/images/self_image.JPG">
-          </div>
-          <div class="about-me-content">
-            <p>
-              I'm a software engineer with a passion for backend development, graphics programming, and machine learning. I am
-              always on the lookout
-              for new challenges that can help me grow in my field.
-              <br>
-              <br>
-                Over the years, I have gained experience in contributing to and implementing complex systems, and I pride
-                myself on being able to work well both independently and as part of a team. I have a keen eye for detail and a
-                drive to constantly improve my skills and stay up to date with the latest industry trends.
-              <br>
-              <br>
-                My expertise includes working with languages such as Javascript, C++, and Python, as well as experience with
-                databases and cloud services. My approach to software engineering is rooted in the principles of agile
-                development, which allows me to produce high-quality code that meets user needs.
-            </p>
-          </div>
-        </section>
-
-        <!-- Bold technologies and keywords/buzzwords used -->
-	<!--
-        <section id="work" class="container">
-          <h1><a>Experience</a></h1>
-          <div class="experience">
-            <h3>ARA, Software Engineer</h3>
-            <ul>
-              <li>Deployed user API from the ground up using Django, K8s, Helm, Gitlab CI, and Docker. Allowing user preferences to be saved.</li>
-              <br>
-              <li>Integrated authentication/authorization for user's API using bearer tokens and JWT to secure endpoints.</li>
-              <br>
-              <li>Unit tested code using Django, increasing test coverage to 100%.</li>
-              <br>
-            </ul>
-          </div>
-          <div class="experience">
-            <h3>Bitwerx, Software Engineer Intern</h3>
-            <ul>
-              <li>Refactored the data extraction codebase using C++, leading to a 20% reduction in data migration time.</li>
-              <br>
-              <li>Designed an algorithm to generate database connection strings, ensuring connection is always acquired.</li>
-              <br>
-              <li>Developed Microsoft installer (.msi) for product installation, reducing virtual machine provisioning time by 12%.</li>
-              <br>
-            </ul>
-          </div>
-          <div class="experience">
-            <h3>Couchers, Backend Developer</h3>
-            <ul>
-              <li> Unit tested code by using pytest, increasing unit test coverage.</li>
-              <br>
-              <li>Contributed a feature using flask to notify users when their friend request was accepted.</li>
-              <br>
-              <li>This is a user-facing feature which is available to over 25,000 users internationally.</li>
-              <br>
-            </ul>
-          </div>
-          <div class="experience">
-            <h3>University of Kentucky, CS Undergrad Research Assistant</h3>
-            <ul>
-              <li>Presented website at University of Kentucky E-day to over 3,000 attendees.</li>
-              <br>
-            </ul>
-          </div>
-        </section>
-	-->
-
-        <!-- Image for each project and link to it -->
-        <section id="projects" class="container">
-          <h1><a>Projects</a></h1>
-          <div class="projects">
-            <div class="project-item">
-              <a href="https://github.com/austinburnett/instagram-clone" target="_blank"><img alt="Project1 Image" src="/assets/images/austagram-clone.png"></a>
-              <h3>Instagram Clone</h3>
-            </div>
-
-            <div class="project-item">
-              <a href="" target="_blank"><img alt="Raytracer Image" src="/assets/images/rendered.png"></a>
-              <h3>Toy Raytracer</h3>
-            </div>
-          </div>
-        </section>
+<body>
+  <header>
+    <div class="split">
+      <div class="picture">
+        <img alt="Austin Burnett Image" src="./assets/images/self_image.JPG">
       </div>
-    </main>
 
+      <div class="not-picture">
+        <h1>Austin Burnett</h1>
+        <ul>
+          <li>Software Engineer /</li>
+          <li>Computer Graphics /</li>
+          <li>Backend Development</li>
+        </ul>
+        <br>
+        <span>University of Kentucky Alumni</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <main>
+      <section id="about-me">
+        <h1><a>About Me</a></h1>
+        <div class="about-me-content">
+          <p>
+            I'm a Software Engineer with a passion for Backend Development and Computer Graphics. I am
+            always on the lookout
+            for new challenges that can help me grow in my field.
+            Over the years, I have gained experience in contributing to and implementing complex systems, and I pride
+            myself on being able to work well both independently and as part of a team. I have a keen eye for detail and
+            a
+            drive to constantly improve my skills and stay up to date with the latest industry trends.
+            <br>
+            <br>
+            My expertise includes working with languages such as C++, Python, and Javascript as well as experience with
+            API development, OpenGL, and Cloud Services. I continually hone these skills through open-source
+            contributions, personal projects,
+            and reading.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h1><a>Projects</a></h1>
+        <div class="project-container">
+          <div class="project-item">
+            <a href="https://github.com/austinburnett/instagram-clone" target="_blank"><img alt="Project1 Image"
+                src="/assets/images/austagram-clone.png"></a>
+            <h3>Instagram Clone</h3>
+          </div>
+
+          <div class="project-item">
+            <a href="https://github.com/austinburnett/mini-raytracer" target="_blank"><img alt="Raytracer Image" src="/assets/images/rendered.png"></a>
+            <h3>Toy Raytracer</h3>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="footer-container">
     <footer>
-      <h2>Socials:</h2>
       <ul>
-        <li><a href="https://www.linkedin.com/in/austin-burnett-51249a183/">Linkedin</a><i class="fa-brands fa-linkedin"></i></li>
-        <li><a href="https://github.com/austinburnett">Github</a><i class="fa-brands fa-square-github"></i></li>
+        <li>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/austin-burnett-51249a183/">Linkedin</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-square-github"></i>
+          <a href="https://github.com/austinburnett">Github</a>
+        </li>
       </ul>
     </footer>
+  </div>
 
-  </body>
+</body>
 </html>
