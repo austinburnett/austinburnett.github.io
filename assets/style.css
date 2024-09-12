@@ -27,6 +27,11 @@ header, footer, main {
     margin: 0 auto;
     padding: 1rem;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 ul {
     padding: 0;
     margin: 0;
@@ -65,7 +70,7 @@ header img {
 /* MAIN CONTENT CONTAINER */
 .content-container {
     background-color: #252424;
-    margin-bottom: 30rem;
+    flex: 1;
 }
 
 /* MAIN */
