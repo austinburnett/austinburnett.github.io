@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blogcontent_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Perspective Projection</title>
+</head>
+
+<body>
+  <header>
+        <div class="space-inbetween">
+          <h1>Perspective Projection</h1>
+
+          <a href="../index.html">
+              <i class="fa-solid fa-house"></i>
+          </a>
+        </div>
+
+        <hr>
+  </header>
+
+    <main>
+      <section>
+        <div class="side-by-side-img">
+          <div class="img-with-caption">
+            <img alt="Figure" src="Figure0.png">
+            <sub>Perspective Projection Frustum</sub>
+          </div>
+
+          <div class="img-with-caption">
+            <img alt="Figure" src="Figure0_in_2d.png">
+            <sub>Perspective Projection Frustum View From x-axis</sub>
+          </div>
+        </div>
+
+        <br>
+
+        <p>
+          A perspective projection matrix allows you to define an arbitrary viewing volume, or frustum, that will dictate which objects are displayed on the screen
+          and apply a perspective affect that makes objects further away appear smaller than closer ones.
+        <p>
+
+        <p>
+          This is carried out through the computations contained within a projection matrix:
+          <ul>
+            <li>1) Perspective transform (Distorting the perspective frustum into a viewing volume that resembles an orthographic projection volume- I think this might include projecting coordinates onto the near plane).</li>
+            <li>2) Distorting to the canonical viewing volume by remapping the range to [-1, 1].</li>
+            <br>
+          </ul>
+        </p>
+      </section>
+
+      <section>
+        <h2>Homogeneous Coordinate Trick</h2>
+        <hr>
+        <p>
+          An important step in understanding how to create the Perspective Projection matrix is learning what role 
+          homogeneous coordinates play. Consider the figures below, you wouldn't be able to create a matrix that
+          divides the x, y, and z values by the z-value contained within the point vector because there is no way
+          to carry over the point vector's z-value into the result. Pay attention to the values underlined in red,
+          using homogeneous coordinates, which allow us to copy over the z-value so we can later perform the division
+          by z(which is now w_clip). And that's how the 4th row of the matrix is derived.
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="Figure1.png">
+          <img alt="Figure" src="Figure2.png">
+        </div>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <section>
+        <h2>Depth Value Loss</h2>
+        <hr>
+
+      </section>
+
+      <br>
+      <br>
+      <footer>
+        <h4>Additonal Resources</h4>
+        <ul>
+          <li>
+            <a href="https://www.youtube.com/watch?v=U0_ONQQ5ZNM&t=358s">Brendan Galea</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=1z1S2kQKXDs&t=2453s">Cem Yuksel</a>
+          </li>
+        </ul>
+      </footer>
+    </main>
+
+</body>
+</html>
