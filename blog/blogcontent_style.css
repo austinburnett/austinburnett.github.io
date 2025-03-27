@@ -8,7 +8,6 @@ html {
 html, body {
     width: 100%;
     min-height: 100%;
-
     padding: 0;
     border: 0;
     margin: 0;
@@ -41,7 +40,6 @@ a {
     color: #d9e0ee;
     text-decoration: none;
 }
-
 h5 {
     padding: 0px;
 }
@@ -56,7 +54,6 @@ ul {
     list-style-type: none;
     margin: 0px
 }
-
 li {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -67,8 +64,6 @@ header h1{
     padding: 0px;
     margin: 0px;
 }
-
-/* Main */
 .space-inbetween {
     display: flex;
     flex-direction: row; 
@@ -76,7 +71,11 @@ header h1{
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.nav-icons a{
+    padding: 5px;
+}
 
+/* Main */
 .side-by-side-img {
     display: flex;
     flex-direction: row;
@@ -87,7 +86,6 @@ header h1{
     max-width: 460px;
     max-height: 260px;
 }
-
 .img-with-caption {
     display: flex;
     flex-direction: column;
