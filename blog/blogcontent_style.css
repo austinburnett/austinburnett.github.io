@@ -26,6 +26,9 @@ header, footer, main {
     margin: 0 auto;
     padding: 1rem;
 }
+section {
+    margin-bottom: 3rem;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -76,6 +79,10 @@ header h1{
 }
 
 /* Main */
+main h2 {
+    padding: 0px;
+    margin: 0px;
+}
 .side-by-side-img {
     display: flex;
     flex-direction: row;

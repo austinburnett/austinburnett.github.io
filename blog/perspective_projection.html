@@ -35,7 +35,7 @@
       <section>
         <div class="side-by-side-img">
           <div class="img-with-caption">
-            <img alt="Figure" src="Figure0.png">
+            <img alt="Figure" src="perspective_view_volume.png">
             <sub>Perspective Projection Frustum</sub>
           </div>
 
@@ -60,6 +60,63 @@
             <br>
           </ul>
         </p>
+      </section>
+
+      <section>
+        <h2>Projection What?</h2>
+        <hr>
+        <p>
+          The first step in determining how to derive the Perspective Projection matrix is, believe it or not,
+          knowing how projection works. You can think of projection as a line starting
+          from your eye to a specific point in the scene. This line intersects a plane known as the near
+          plane, or image plane, and continues into the scene. Drawing out this concept, we can arrive at something
+          that looks like the figures below. Where P is the point in the scene, and P' is the the location of the point
+          projected onto the near plane.
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="Figure3.png">
+          <img alt="Figure" src="Figure4.png">
+        </div>
+
+        <p>
+          So how do we determine the coordinates for P'? The slope - though, it is also common to use the law of
+          similiar triangles to determine the x and y-values of P'. We know the slope for P is y/z, and since
+          our goal is to project this point onto the near plane, we multiply the slope by the z-value at near.
+          This looks something like z * (y/z) = y. This yields the y-value of P'. A similar process is used to
+          obtain the x-value of P'. Now working with the zx-plane, we use the slope x/z and again multiply that
+          by the z-value denoted by near, to get z * (x/z) = x.
+        </p>
+
+        <p>
+          Now we know how to determine the x and y-values of the projected point: (n * y)/z and (n * x)/z, where n =
+          the near projection plane's z-value. But
+          because we also want to deform the Perspective Projection Frustum into the canonical view volume,
+          we still need to transform our coordinate values from the range [left, right], [bottom, top], and
+          [near, far] to [-1, 1], [-1, 1], and [-1, 1] respectively.
+        </p>
+
+        <div class="side-by-side-img">
+          <div class="img-with-caption">
+            <img alt="Figure" src="perspective_view_volume.png">
+            <sub>Perspective Projection Frustum</sub>
+          </div>
+
+          <div class="img-with-caption">
+            <img alt="Figure" src="canonical_view_volume.png">
+            <sub>Canonical View Volume</sub>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Deforming Perspective Frustum into Canonical View Volume</h2>
+        <hr>
+
+          <div class="">
+            <img alt="Figure" src="deriving_p'x.png">
+          </div>
+
       </section>
 
       <section>
