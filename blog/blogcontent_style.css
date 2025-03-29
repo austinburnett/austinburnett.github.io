@@ -97,6 +97,27 @@ main h2 {
     display: flex;
     flex-direction: column;
 }
+.side-by-side-img-with-separator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.flexy-container {
+    display: flex;
+}
+.flex-item {
+    display: flex;
+}
+.flex-column {
+    display: flex;
+}
+.img-with-caption-line {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px #d9e0ee solid;
+    margin-right: 10px;
+}
+
 
 /* FOOTER */
 footer {

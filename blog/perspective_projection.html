@@ -63,6 +63,21 @@
       </section>
 
       <section>
+        <h2>Things to Know Before Diving in: Conventions</h2>
+        <hr>
+
+        <p>
+          This article is mainly geared towards the commonly used conventions that programmers use 
+          when working with OpenGL such as 
+          column-major ordering for matrices and RHS(Right Handed System) for coordinate systems.
+          So, if you'd like to use the results, just keep in mind that you may need to transpose
+          the matrices so they're in row-major ordering instead. Also, if there are any other caveats,
+          then they will be discussed in the specific section they apply to. Moreover, it doesn't matter
+          which conventions you prefer, just make sure you're consistent with them throughout your program.
+        </p>
+      </section>
+
+      <section>
         <h2>Projection What?</h2>
         <hr>
         <p>
@@ -83,9 +98,9 @@
           So how do we determine the coordinates for P'? The slope - though, it is also common to use the law of
           similiar triangles to determine the x and y-values of P'. We know the slope for P is y/z, and since
           our goal is to project this point onto the near plane, we multiply the slope by the z-value at near.
-          This looks something like z * (y/z) = y. This yields the y-value of P'. A similar process is used to
+          This looks something like z * (y/z) = P'y. This yields the y-value of P'. A similar process is used to
           obtain the x-value of P'. Now working with the zx-plane, we use the slope x/z and again multiply that
-          by the z-value denoted by near, to get z * (x/z) = x.
+          by the z-value denoted by near, to get z * (x/z) = P'x.
         </p>
 
         <p>
@@ -93,7 +108,8 @@
           the near projection plane's z-value. But
           because we also want to deform the Perspective Projection Frustum into the canonical view volume,
           we still need to transform our coordinate values from the range [left, right], [bottom, top], and
-          [near, far] to [-1, 1], [-1, 1], and [-1, 1] respectively.
+          [near, far] to [-1, 1], [-1, 1], and [-1, 1] respectively. Sometimes you will see the equations
+          defined as -z * (y/-z) = P'y and -z * (x/-z) = P'x when a LHS is preferred by the developer.
         </p>
 
         <div class="side-by-side-img">
@@ -113,8 +129,19 @@
         <h2>Deforming Perspective Frustum into Canonical View Volume</h2>
         <hr>
 
-          <div class="">
-            <img alt="Figure" src="deriving_p'x.png">
+          <div class="flexy-container">
+          <div class="flex-item">
+            <div class="img-with-caption-line">
+              <sub>P'x Inequality</sub>
+              <img alt="Figure" src="p'x_inequality.png">
+            </div>
+
+            <div class="img-with-caption">
+              <sub>P'y Inequality</sub>
+              <img alt="Figure" src="p'y_inequality.png">
+            </div>
+          </div>
+
           </div>
 
       </section>
@@ -126,9 +153,15 @@
           An important step in understanding how to create the Perspective Projection matrix is learning what role 
           homogeneous coordinates play. Consider the figures below, you wouldn't be able to create a matrix that
           divides the x, y, and z values by the z-value contained within the point vector because there is no way
-          to carry over the point vector's z-value into the result. Pay attention to the values underlined in red,
-          using homogeneous coordinates, which allow us to copy over the z-value so we can later perform the division
-          by z(which is now w_clip). And that's how the 4th row of the matrix is derived.
+          to carry over the point vector's z-value into the result. Pay attention to the values underlined in red.
+          We can use  homogeneous coordinates to copy over the z-value so we can later perform the division
+          by z(which is now w_clip). And that's how the 4th row of the matrix is derived. 
+        </p>
+
+        <p>
+          You may see a matrix with the 4th colume defined as 0 0 1 0 which would not flip the
+          value of z_eye when carrying it over to w_clip. This is again, is something that is
+          preferred by the programmer.
         </p>
 
         <div class="side-by-side-img">
