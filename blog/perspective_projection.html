@@ -40,7 +40,7 @@
           </div>
 
           <div class="img-with-caption">
-            <img alt="Figure" src="Figure0_in_2d.png">
+            <img alt="Figure" src="2d_perspective_frustum.png">
             <sub>Perspective Projection Frustum View From x-axis</sub>
           </div>
         </div>
@@ -50,16 +50,13 @@
         <p>
           A perspective projection matrix allows you to define an arbitrary viewing volume, or frustum, that will dictate which objects are displayed on the screen
           and apply a perspective affect that makes objects further away appear smaller than closer ones.
-        <p>
-
-        <p>
           This is carried out through the computations contained within a projection matrix:
           <ul>
-            <li>1) Perspective transform (Distorting the perspective frustum into a viewing volume that resembles an orthographic projection volume- I think this might include projecting coordinates onto the near plane).</li>
+            <li>1) Distorting the perspective frustum into a viewing volume that resembles an orthographic projection volume- I think this might include projecting coordinates onto the near plane.</li>
             <li>2) Distorting to the canonical viewing volume by remapping the range to [-1, 1].</li>
             <br>
           </ul>
-        </p>
+        <p>
       </section>
 
       <section>
@@ -90,8 +87,8 @@
         </p>
 
         <div class="side-by-side-img">
-          <img alt="Figure" src="Figure3.png">
-          <img alt="Figure" src="Figure4.png">
+          <img alt="Figure" src="2d_perspective_projection_p_example.png">
+          <img alt="Figure" src="2d_perspective_projection_p'_example.png">
         </div>
 
         <p>
@@ -133,12 +130,12 @@
           <div class="flex-item">
             <div class="img-with-caption-line">
               <sub>P'x Inequality</sub>
-              <img alt="Figure" src="p'x_inequality.png">
+              <img alt="Figure" src="p'x_inequality_negative.png">
             </div>
 
             <div class="img-with-caption">
               <sub>P'y Inequality</sub>
-              <img alt="Figure" src="p'y_inequality.png">
+              <img alt="Figure" src="p'y_inequality_negative.png">
             </div>
           </div>
 
@@ -149,25 +146,33 @@
       <section>
         <h2>Homogeneous Coordinate Trick</h2>
         <hr>
+
         <p>
           An important step in understanding how to create the Perspective Projection matrix is learning what role 
           homogeneous coordinates play. Consider the figures below, you wouldn't be able to create a matrix that
           divides the x, y, and z values by the z-value contained within the point vector because there is no way
           to carry over the point vector's z-value into the result. Pay attention to the values underlined in red.
           We can use  homogeneous coordinates to copy over the z-value so we can later perform the division
-          by z(which is now w_clip). And that's how the 4th row of the matrix is derived. 
+          by w(OpenGL does this division by w automatically and is known as Perspective Division). 
+          And that's how the 4th row of the matrix is derived. 
         </p>
 
         <p>
-          You may see a matrix with the 4th colume defined as 0 0 1 0 which would not flip the
-          value of z_eye when carrying it over to w_clip. This is again, is something that is
-          preferred by the programmer.
+          You may see this matrix with the 4th row defined as 0 0 1 0, which would not flip the
+          sign of z_eye when carrying it over to w_clip. Again, this is something that is
+          dependent upon whether or not you're working with a RHS or LHS- programmer's choice. If
+          you're working with a RHS in OpenGL and are not calling this function like so: glDepthFunc(GL_GREATER).
+          Then it's likely that you need the Perspective Projection Matrix to flip the sign of z_eye so that the handedness
+          of your coordinate system goes from RHS to LHS since the default OpenGL depth test operator is GL_LESS which means
+          that fragments with a smaller depth value will be in front of fragments with a larger depth value; the opposite
+          is said for GL_GREATER.
         </p>
 
         <div class="side-by-side-img">
-          <img alt="Figure" src="Figure1.png">
-          <img alt="Figure" src="Figure2.png">
+          <img alt="Figure" src="blank_projection_matrix.png">
+          <img alt="Figure" src="projection_matrix_4th_row_positive.png">
         </div>
+
       </section>
 
       <br>
@@ -176,6 +181,17 @@
       <section>
         <h2>Depth Value Loss</h2>
         <hr>
+
+      </section>
+
+      <section>
+        <h2>Depth value range of [0, 1] or [-1, 1]</h2>
+        <hr>
+
+        <p>
+          Fortunately, this doesn't matter too much with OpenGL since the viewport transform kinda handles it. With OpenGL, you can
+          partially define the viewport transform using glViewport(...).
+        </p>
 
       </section>
 
@@ -189,6 +205,12 @@
           </li>
           <li>
             <a href="https://www.youtube.com/watch?v=1z1S2kQKXDs&t=2453s">Cem Yuksel</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=1z1S2kQKXDs&t=2453s">Scratchapixel</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=1z1S2kQKXDs&t=2453s">Songho</a>
           </li>
         </ul>
       </footer>
