@@ -101,11 +101,11 @@
 
         <p>
           Now we know how to determine the x and y-values of the projected point: (n * y)/z and (n * x)/z, where n =
-          the near projection plane's z-value. But
+          the near plane's z-value. But
           because we also want to deform the Perspective Projection Frustum into the canonical view volume,
           we still need to transform our coordinate values from the range [left, right], [bottom, top], and
-          [near, far] to [-1, 1], [-1, 1], and [-1, 1] respectively. Sometimes you will see the equations
-          defined as -z * (y/-z) = P'y and -z * (x/-z) = P'x when a LHS is preferred by the developer.
+          [near, far] to all be within the range: [-1, 1]. Note, we will be using the equations
+          defined as -z * (y/-z) = P'y and -z * (x/-z) = P'x since a RHS is being preferred.
         </p>
 
         <div class="side-by-side-img">
