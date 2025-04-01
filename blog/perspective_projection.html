@@ -32,6 +32,7 @@
   </header>
 
     <main>
+      <!-- Section  -->
       <section>
         <div class="side-by-side-img">
           <div class="img-with-caption">
@@ -54,11 +55,13 @@
           <ul>
             <li>1) Distorting the perspective frustum into a viewing volume that resembles an orthographic projection volume- I think this might include projecting coordinates onto the near plane.</li>
             <li>2) Distorting to the canonical viewing volume by remapping the range to [-1, 1].</li>
+            <li>2) Non-linear z-buffer.</li>
             <br>
           </ul>
         <p>
       </section>
 
+      <!-- Section  -->
       <section>
         <h2>Things to Know Before Diving in: Conventions</h2>
         <hr>
@@ -74,6 +77,7 @@
         </p>
       </section>
 
+      <!-- Section  -->
       <section>
         <h2>Projection What?</h2>
         <hr>
@@ -122,6 +126,7 @@
         </div>
       </section>
 
+      <!-- Section  -->
       <section>
         <h2>Deforming Perspective Frustum into Canonical View Volume</h2>
         <hr>
@@ -141,8 +146,20 @@
 
           </div>
 
+          <br>
+          <p>
+            Encoding this equation into the Perspective Projection Matrix, we get something like this.
+            I kind like how songho formulated the equation above to make it easier to understand that
+            (R+L)/(R-L) goes into the z coordinate spot.
+          </p>
+
+          <div class="side-by-side-img">
+            <img alt="Figure" src="projection_matrix_at_canonical_view_volume_step.png">
+          </div>
+
       </section>
 
+      <!-- Section  -->
       <section>
         <h2>Homogeneous Coordinate Trick</h2>
         <hr>
@@ -170,35 +187,146 @@
 
         <div class="side-by-side-img">
           <img alt="Figure" src="blank_projection_matrix.png">
-          <img alt="Figure" src="projection_matrix_4th_row_positive.png">
+        </div>
+
+        <br>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="carryover_zvalue_using_homogeneous_coordinates.png">
         </div>
 
       </section>
 
       <br>
-      <br>
-      <br>
+      <!-- Section  -->
       <section>
-        <h2>Depth Value Loss</h2>
+        <h2>Prevention of Depth Value Loss</h2>
         <hr>
 
+        <p>
+          Now we have obtained 3 of the 4 rows of the Perspective Projection Matrix.
+          Based on our prior observations on projections, we know that
+          there's the no relationship between the resulting z_clip value and the x and y-values. Therefore, the first two values
+          of the 3rd row are filled with 0s.
+
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="partially_blank_3rd_row_matrix.png">
+        </div>
+
+        <p>
+           We also know that we want to keep our z-value since it contains useful depth information. So why not just
+           fill in the last two elements in the row with -1 and 0 like so? Unfortunately, that would always result in
+           the z_clip value being 1- which is not too helpful since information about the original z-value is lost.
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="hypothetical_3rd_row_matrix_result.png">
+        </div>
+
+        <br>
+        <p>
+          Instead, the best that can be done is to retain information about the beginning and end range.
+          Expanding out the matrix math and solve for the last two elements.
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="3rd_row_with_vars_and_more.png">
+        </div>
+
+        <br>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="matrix_math_expanded.png">
+        </div>
+
+        <p>
+          Fortunately, when the z-value is on the near clipping plane, we know its value will be remapped to -1, and when the
+          z-value is on the far clipping plane, its value will be remapped to 1. Keep in mind that the end
+          goal is to remap the z_eye value from [n, f] to [-1, 1]. However, the relationship between z_eye and z_ndc is
+          [-n, -1] and [-f, 1] even though n and f are specified using positive values. Therefore, -n and -f will be used
+          in the equation instead.
+        </p>
+
+        <p>
+          When the point is on the near clipping plane (P_z = -n):
+        </p>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="first_equation.png">
+        </div>
+
+
+        <p>When the point is on the far clipping plane (P_z = -f):</p>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="second_equation.png">
+        </div>
+
+        <p>Rearrange equation 1 to solve for B:</p>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="rearrange_equation_one.png">
+        </div>
+
+        <p>Plug the equation for B into equation 2:</p>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="solve_for_a.png">
+        </div>
+
+        <p>Plug the equation for A into equation 1:</p>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="solve_for_a.png">
+        </div>
+
+        <p>Solve for B by plugging in A into -n + An:</p>
+        <div class="">
+          <img alt="Figure" src="solve_for_b.png">
+        </div>
       </section>
 
+      <!-- Section  -->
+      <section>
+        <h2>The Perspective Projection Matrix</h2>
+        <hr>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="perspective_projection_matrix_result.png">
+        </div>
+      </section>
+
+      <!-- Section  -->
       <section>
         <h2>Depth value range of [0, 1] or [-1, 1]</h2>
         <hr>
 
         <p>
-          Fortunately, this doesn't matter too much with OpenGL since the viewport transform kinda handles it. With OpenGL, you can
-          partially define the viewport transform using glViewport(...).
+          This doesn't matter too much with OpenGL since the viewport transform kinda handles it. With OpenGL, you can
+          partially define the viewport transform using glViewport(...) and can sorta modify the depth range using
+          glDepthRange(...) although any value specified will be clamped to [0, 1].
         </p>
 
       </section>
 
+      <!-- Section  -->
+      <section>
+        <h2>Defining the Frustum in Terms of FOV and Aspect Ratio</h2>
+        <hr>
+
+        <p>
+          To simply the number of parameters required to define the Perspective Projection Frustum, we can make use of trigonometry.
+        </p>
+      </section>
+
       <br>
       <br>
+      <!-- Footer  -->
       <footer>
-        <h4>Additonal Resources</h4>
+        <h4>References</h4>
+        <hr>
+
+        <p>
+          Feel free to check out the following resources, a lot of the information contained within this post
+          has been pulled from these sites, and I have just provided my insight and explanations on how to
+          derive the Perspective Projection Matrix.
+        </p>
+
         <ul>
           <li>
             <a href="https://www.youtube.com/watch?v=U0_ONQQ5ZNM&t=358s">Brendan Galea</a>
@@ -213,6 +341,7 @@
             <a href="https://www.youtube.com/watch?v=1z1S2kQKXDs&t=2453s">Songho</a>
           </li>
         </ul>
+
       </footer>
     </main>
 
