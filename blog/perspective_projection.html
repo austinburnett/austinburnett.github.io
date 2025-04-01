@@ -305,13 +305,35 @@
         <hr>
 
         <p>
-          To simply the number of parameters required to define the Perspective Projection Frustum, we can make use of trigonometry.
+          You can define the Perspective Projection Frustum using left, right, bottom, top, near, and far.
+          However, wouldn't it be nice if we didn't have to provide all of those parameters and instead
+          only specify a couple and let math do the rest of the work for us? Yes! So, what we can do is
+          make use of trigonometry so we only have to specify the near, far, fovy, and aspect ratio.
         </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="frustum_sideview_with_angles_labled.png">
+        </div>
+
+        <br>
+        <div class="side-by-side-img">
+          <img alt="Figure" src="rectangular_camera_math.png">
+        </div>
+
+        <br>
+        <p>
+          You can also make use of a nice property if the image plane is a square instead of a rectangle.
+          You cant just do the math below instead:
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="square_camera_math.png">
+        </div>
+
       </section>
 
-      <br>
-      <br>
       <!-- Footer  -->
+      <br>
       <footer>
         <h4>References</h4>
         <hr>
