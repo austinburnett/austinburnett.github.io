@@ -41,6 +41,8 @@ li {
 }
 img {
     overflow: clip;
+    height: auto;
+    width: auto\9;
 }
 a {
     color: #d9e0ee;
