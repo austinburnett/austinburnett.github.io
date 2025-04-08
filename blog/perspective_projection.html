@@ -301,6 +301,28 @@
 
       <!-- Section  -->
       <section>
+        <h2>Depth Buffer Precision</h2>
+        <hr>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="images/depthbuffer_vs_eyespace_depth.png">
+          <img alt="Figure" src="images/depthbuffer_vs_eyespace_depth_logscale.png">
+        </div>
+
+        <p>
+          The graphs of z_ndc = (z_eye(-f - n) - 2fn) / (-z_eye(f - n)). The one on the right has its x-axis logscaled to
+          help depict the relationship between the axes. The equation is derived from the perspective projection matrix.
+        </p>
+
+        <div class="side-by-side-img">
+          <img alt="Figure" src="images/linearize_depth_derivation.png">
+          <img alt="Figure" src="images/linearize_depth_source_code.png">
+        </div>
+
+      </section>
+
+      <!-- Section  -->
+      <section>
         <h2>Defining the Frustum in Terms of FOV and Aspect Ratio</h2>
         <hr>
 
