@@ -1,22 +1,23 @@
 """Plots the relationship between z_eye and the depth buffer z-value."""
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter
 import numpy as np
 
 # The near and far plane boundaries.
-n = 0.1
-f = 100.0
+near = 0.1
+far = 100.0
 
 def z_eye_to_depth_buffer_value(z_eye: float):
     z_eye = -z_eye
 
-    z_ndc = (z_eye * (-f - n) - 2 * f * n) / (-z_eye * (f - n))
+    z_ndc = (z_eye * (-far - near) - 2 * far * near) / (-z_eye * (far - near))
     depth_buffer_value = (z_ndc + 1) / 2.0
 
     return depth_buffer_value
 
 def main():
-    z_eye_values = np.arange(0.1, 100.0, 0.1)
+    z_eye_values = np.arange(near, far, 0.1)
     function = np.vectorize(z_eye_to_depth_buffer_value)
     depth_buffer_values = function(z_eye_values)
 
@@ -28,20 +29,25 @@ def main():
     ax.set(
         xlim=(0.1, 100),
         ylim=(0, 1),
-        xlabel="Eye Space Depth",
-        ylabel="Depth Buffer Values",
-        title="Depth Buffer Values vs. Eye Space Depth"
+        xlabel=f"Eye Space Depth (near = {near}, far = {far})",
+        ylabel="Depth Buffer Value",
+        title="Depth Buffer Value vs. Eye Space Depth"
     )
+
     ax.set_yticks(np.arange(depth_buffer_values.min(), depth_buffer_values.max() + 0.1, 0.1))
 
+    # Setting the x-axis to logscale helps with visualizing the relationship between the axes.
     ax.set_xscale("log")
-    #ax.set_xticks(np.arange(z_eye_values.min(), z_eye_values.max() + 10, 100))
-    ax.set_xticks(np.arange(0.1, 100 + 10, 10))
-    ax.minorticks_off()
 
+    if ax.get_xscale() == "log":
+        ax.set_xticks([0.1, 0.2, 5, 10, 50, 100])
+
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+
+    ax.ticklabel_format(style='plain')
+    ax.minorticks_off()
     ax.grid()
     ax.legend()
-
 
     plt.show()
 
