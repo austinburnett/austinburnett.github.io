@@ -99,12 +99,12 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 .project-container img {
     max-width: 600px;
     max-height: 400px;
-    height: 200px;
+    height: 225px;
     width: 356px;
 }
 .project-container h3 {
